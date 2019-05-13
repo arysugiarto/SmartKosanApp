@@ -1,0 +1,31 @@
+<tabs>
+    <tab
+        id="@+id/home"
+        icon="@drawable/ic_homeorange"
+        activeColor="@color/active_color"
+        inActiveColor="@color/inactive_color"
+        title="Home" />
+
+
+    <tab
+        id="@+id/partners"
+        icon="@drawable/ic_book1"
+        activeColor="@color/active_color"
+        inActiveColor="@color/inactive_color"
+        title="Tagihan" />
+    <tab
+        id="@+id/transaction"
+        icon="@drawable/ic_activity"
+        activeColor="@color/active_color"
+        inActiveColor="@color/inactive_color"
+        title="Kamar" />
+
+
+    <tab
+        id="@+id/support"
+        icon="@drawable/ic_account1"
+        activeColor="@color/active_color"
+        inActiveColor="@color/inactive_color"
+        title="Account" />
+
+</tabs>

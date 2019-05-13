@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">SmartKosanApp</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="cancel">Cancel</string>
+    <string name="login">Login</string>
+    <string name="lupapassword">Lupa Pasword</string>
+    <string name="google">Login with Google</string>
+</resources>
