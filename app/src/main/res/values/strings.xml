@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">SmartKosanApp</string>
+    <string name="app_name">Smart Kosan App</string>
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
@@ -7,4 +7,5 @@
     <string name="login">Login</string>
     <string name="lupapassword">Lupa Pasword</string>
     <string name="google">Login with Google</string>
+    <string name="daftar">Sign Up</string>
 </resources>
