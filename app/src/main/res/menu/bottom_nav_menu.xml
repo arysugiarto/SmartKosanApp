@@ -1,19 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item
-        android:id="@+id/navigation_home"
-        android:icon="@drawable/ic_home_black_24dp"
-        android:title="@string/title_home" />
 
     <item
-        android:id="@+id/navigation_dashboard"
-        android:icon="@drawable/ic_dashboard_black_24dp"
-        android:title="@string/title_dashboard" />
+        android:id="@+id/home_menu"
+        android:title="@string/beranda"
+        android:icon="@drawable/ic_home_alt"/>
 
     <item
-        android:id="@+id/navigation_notifications"
-        android:icon="@drawable/ic_notifications_black_24dp"
-        android:title="@string/title_notifications" />
+        android:id="@+id/tagihan"
+        android:title="@string/tagihan"
+        android:icon="@drawable/ic_bill"/>
+    <item
+        android:id="@+id/kamar"
+        android:title="@string/kamar"
+        android:icon="@drawable/ic_hotel"/>
+    <item
+        android:id="@+id/history"
+        android:title="@string/histori"
+        android:icon="@drawable/ic_history"/>
+
+    <item
+        android:id="@+id/akun"
+        android:title="@string/history"
+        android:icon="@drawable/ic_user"/>
+
 
 </menu>

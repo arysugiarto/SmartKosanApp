@@ -15,6 +15,13 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="OnBoard" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/blue</item>
+        <item name="colorPrimaryDark">@color/blue</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
     <style name="botoombar_textchange">
         <item name="android:textSize">12dp</item>
     </style>
