@@ -89,6 +89,7 @@
                     android:layout_marginLeft="16dp"
                     android:layout_marginRight="16dp"
                     android:layout_weight="1"
+                    android:layout_margin="2dp"
                     android:gravity="center"
                     android:orientation="horizontal">
 
@@ -97,7 +98,7 @@
                         android:layout_height="100dp"
                         android:layout_marginLeft="5dp"
                         android:layout_marginRight="5dp"
-                        android:backgroundTint="#E8E8FA"
+                        android:backgroundTint="#fafafb"
                         app:cardCornerRadius="5dp">
 
                         <ImageView
@@ -124,7 +125,7 @@
                         android:layout_height="100dp"
                         android:layout_marginLeft="5dp"
                         android:layout_marginRight="5dp"
-                        android:backgroundTint="#E8E8FA"
+                        android:backgroundTint="#fafafb"
                         app:cardCornerRadius="5dp">
 
                         <ImageView
@@ -151,7 +152,7 @@
                         android:layout_height="100dp"
                         android:layout_marginLeft="5dp"
                         android:layout_marginRight="5dp"
-                        android:backgroundTint="#E8E8FA"
+                        android:backgroundTint="#fafafb"
                         app:cardCornerRadius="5dp">
 
                         <ImageView
@@ -199,7 +200,7 @@
                         android:layout_height="100dp"
                         android:layout_marginLeft="5dp"
                         android:layout_marginRight="5dp"
-                        android:backgroundTint="#E8E8FA"
+                        android:backgroundTint="#fafafb"
                         app:cardCornerRadius="5dp">
                         <ImageView
                             android:layout_width="40dp"
@@ -225,7 +226,7 @@
                         android:layout_height="100dp"
                         android:layout_marginLeft="5dp"
                         android:layout_marginRight="5dp"
-                        android:backgroundTint="#E8E8FA"
+                        android:backgroundTint="#fafafb"
                         app:cardCornerRadius="5dp">
                         <ImageView
                             android:layout_width="40dp"
@@ -251,7 +252,7 @@
                         android:layout_height="100dp"
                         android:layout_marginLeft="5dp"
                         android:layout_marginRight="5dp"
-                        android:backgroundTint="#E8E8FA"
+                        android:backgroundTint="#fafafb"
                         app:cardCornerRadius="5dp">
                         <ImageView
                             android:layout_width="40dp"
@@ -336,7 +337,7 @@
                         android:layout_marginTop="20dp"
                         android:layout_marginRight="5dp"
                         android:layout_marginBottom="10dp"
-                        android:backgroundTint="#E91E63"
+                        android:backgroundTint="#14f7be"
                         app:cardCornerRadius="5dp">
 
                         <TextView
