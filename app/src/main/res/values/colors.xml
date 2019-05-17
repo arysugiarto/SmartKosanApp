@@ -5,6 +5,9 @@
     <color name="colorAccent">#D81B60</color>
     <color name="white">#fff</color>
     <color name="blue">#1032FC</color>
+    <color name="black">#000</color>
+    <color name="cyan">#14f7be</color>
+
 
     <color name="txt_color">#1f2833</color>
 
