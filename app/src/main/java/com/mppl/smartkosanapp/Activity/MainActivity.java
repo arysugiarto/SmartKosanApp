@@ -12,6 +12,7 @@ import android.view.MenuItem;
 import com.mppl.smartkosanapp.Fragment.HistoriFragment;
 import com.mppl.smartkosanapp.Fragment.HomeFragment;
 import com.mppl.smartkosanapp.Fragment.KamarFragment;
+import com.mppl.smartkosanapp.Fragment.ProfileFragment;
 import com.mppl.smartkosanapp.Fragment.TagihanFragment;
 import com.mppl.smartkosanapp.R;
 
@@ -45,7 +46,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
                     fragment = new HistoriFragment();
                     break;
                 case R.id.akun:
-                    fragment = new HomeFragment();
+                    fragment = new ProfileFragment();
                     break;
             }
             return loadFragment(fragment);
