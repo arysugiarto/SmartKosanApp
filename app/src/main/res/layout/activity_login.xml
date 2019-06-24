@@ -62,7 +62,6 @@
         android:drawableLeft="@drawable/ic_account1"
         />
 
-
     <Button
         android:id="@+id/buttonsignin"
         android:layout_width="match_parent"

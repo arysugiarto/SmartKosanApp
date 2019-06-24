@@ -9,8 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activity.KamarActivity"></activity>
-        <activity android:name=".Activity.TagihanActivity" />
+        <activity android:name=".Activity.KamarActivity"
+            android:theme="@style/OnBoard"></activity>
+        <activity android:name=".Activity.TagihanActivity"
+            android:theme="@style/OnBoard"/>
         <activity android:name=".Activity.MainActivity"
             android:theme="@style/OnBoard"/>
         <activity
