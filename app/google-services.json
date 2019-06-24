@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "985641518439",
+    "firebase_url": "https://smartkosanapp.firebaseio.com",
+    "project_id": "smartkosanapp",
+    "storage_bucket": "smartkosanapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:985641518439:android:0ca950620e8daa81",
+        "android_client_info": {
+          "package_name": "com.mppl.smartkosanapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "985641518439-81rmpclc6siihp9opqad4um40f2020jb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mppl.smartkosanapp",
+            "certificate_hash": "e7b9bd6bacb2e4843bddd3765121dd205e120198"
+          }
+        },
+        {
+          "client_id": "985641518439-irje52861q12f6qg2b8tfov1fs10i6m8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyByBTw2JB3c7oQpdD847prz9fTUpsncl20"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "985641518439-irje52861q12f6qg2b8tfov1fs10i6m8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

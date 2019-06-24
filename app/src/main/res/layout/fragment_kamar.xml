@@ -28,18 +28,18 @@
             android:layout_gravity="center" />
     </android.support.v7.widget.Toolbar>
 
-    <!-- TODO: Update blank fragment layout -->
-    <!--<android.support.v7.widget.RecyclerView-->
-    <!--android:id="@+id/rv_klinik_home"-->
-    <!--android:layout_width="match_parent"-->
-    <!--android:layout_height="wrap_content">-->
+     TODO: Update blank fragment layout
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_kamar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <!--</android.support.v7.widget.RecyclerView>-->
-    <include
-        layout="@layout/item_kamar"/>
-    <include
-        layout="@layout/item_kamar"/>
-    <include
-        layout="@layout/item_kamar"/>
+    </android.support.v7.widget.RecyclerView>
+    <!--<include-->
+        <!--layout="@layout/item_kamar"/>-->
+    <!--<include-->
+        <!--layout="@layout/item_kamar"/>-->
+    <!--<include-->
+        <!--layout="@layout/item_kamar"/>-->
 
 </LinearLayout>

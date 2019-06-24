@@ -6,7 +6,7 @@
     android:orientation="vertical">
 
     <android.support.v7.widget.CardView
-        android:id="@+id/cv_klinik_home"
+        android:id="@+id/cv_tagihan"
         android:layout_width="match_parent"
         android:foreground="?android:attr/selectableItemBackground"
         android:clickable="true"
