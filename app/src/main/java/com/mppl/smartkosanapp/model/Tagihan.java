@@ -4,26 +4,39 @@ import android.widget.TextView;
 
 public class Tagihan {
 
-    private TextView jenisTagihan, tanggal, totalTagihan;
+    private String jenisTagihan, tanggal;
+    private int totalTagihan;
 
     public Tagihan() {
     }
 
-    public Tagihan(TextView jenisTagihan, TextView tanggal, TextView totalTagihan) {
+    public Tagihan(String jenisTagihan, String tanggal, int totalTagihan) {
         this.jenisTagihan = jenisTagihan;
         this.tanggal = tanggal;
         this.totalTagihan = totalTagihan;
     }
 
-    public TextView getJenisTagihan() {
+    public String getJenisTagihan() {
         return jenisTagihan;
     }
 
-    public TextView getTanggal() {
+    public void setJenisTagihan(String jenisTagihan) {
+        this.jenisTagihan = jenisTagihan;
+    }
+
+    public String getTanggal() {
         return tanggal;
     }
 
-    public TextView getTotalTagihan() {
+    public void setTanggal(String tanggal) {
+        this.tanggal = tanggal;
+    }
+
+    public int getTotalTagihan() {
         return totalTagihan;
+    }
+
+    public void setTotalTagihan(int totalTagihan) {
+        this.totalTagihan = totalTagihan;
     }
 }

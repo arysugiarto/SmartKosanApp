@@ -4,31 +4,48 @@ import android.widget.TextView;
 
 public class Histori {
 
-    private TextView jenisPembayaran, totalPembayaran, tanggalPembayaran, status;
+    private String jenisPembayaran, tanggalPembayaran, status;
+    private int totalPembayaran;
 
     public Histori() {
     }
 
-    public Histori(TextView jenisPembayaran, TextView totalPembayaran, TextView tanggalPembayaran, TextView status) {
+    public Histori(String jenisPembayaran, String tanggalPembayaran, String status, int totalPembayaran) {
         this.jenisPembayaran = jenisPembayaran;
-        this.totalPembayaran = totalPembayaran;
         this.tanggalPembayaran = tanggalPembayaran;
         this.status = status;
+        this.totalPembayaran = totalPembayaran;
     }
 
-    public TextView getJenisPembayaran() {
+    public String getJenisPembayaran() {
         return jenisPembayaran;
     }
 
-    public TextView getTotalPembayaran() {
+    public void setJenisPembayaran(String jenisPembayaran) {
+        this.jenisPembayaran = jenisPembayaran;
+    }
+
+    public int getTotalPembayaran() {
         return totalPembayaran;
     }
 
-    public TextView getTanggalPembayaran() {
+    public void setTotalPembayaran(int totalPembayaran) {
+        this.totalPembayaran = totalPembayaran;
+    }
+
+    public String getTanggalPembayaran() {
         return tanggalPembayaran;
     }
 
-    public TextView getStatus() {
+    public void setTanggalPembayaran(String tanggalPembayaran) {
+        this.tanggalPembayaran = tanggalPembayaran;
+    }
+
+    public String getStatus() {
         return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 }
