@@ -32,6 +32,7 @@
                 >
 
                 <TextView
+                    android:id="@+id/tv_jenis_pembayaran"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Listrik"
@@ -61,6 +62,7 @@
                 android:layout_margin="8dp">
 
                 <TextView
+                    android:id="@+id/tv_total_pembayaran"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Rp.200.000"
@@ -69,6 +71,7 @@
                     android:textColor="@color/colorPrimary"
                     android:layout_margin="8dp"/>
                 <TextView
+                    android:id="@+id/tv_status"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Sudah di Bayar"

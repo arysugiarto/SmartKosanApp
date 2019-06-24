@@ -29,6 +29,7 @@
             android:layout_gravity="center" />
     </android.support.v7.widget.Toolbar>
     <ImageView
+        android:id="@+id/edit_profile"
         android:layout_width="30dp"
         android:layout_height="40dp"
         android:layout_alignParentRight="true"
@@ -156,14 +157,24 @@
                             android:text="Nama"
                             android:textSize="20dp"
                             android:textStyle="bold" />
-                        <Button
-                            android:id="@+id/Logout"
-                            android:onClick="onClick"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="logout"
-                            tools:ignore="OnClick" />
                     </LinearLayout>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:id="@+id/Logout"
+                        android:onClick="onClick"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAllCaps="false"
+                        android:textStyle="bold"
+                        android:text="Logout"
+                        tools:ignore="OnClick" />
+
                 </LinearLayout>
 
             </LinearLayout>

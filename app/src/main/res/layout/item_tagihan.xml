@@ -30,6 +30,7 @@
                 android:layout_weight="1">
 
                 <TextView
+                    android:id="@+id/tv_jenis_tagihan"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Listrik"
@@ -91,7 +92,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="16dp"
                     android:src="@drawable/ic_keyboard_arrow_right_black_24dp"
-                    />
+                    android:layout_marginRight="16dp" />
 
             </LinearLayout>
 
