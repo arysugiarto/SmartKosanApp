@@ -97,7 +97,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
 
     public void card(View view) {
         if (view.getId()==R.id.kamar){
-            Intent intent = new Intent(MainActivity.this, TagihanActivity.class);
+            Intent intent = new Intent(MainActivity.this, KamarActivity.class);
             startActivity(intent);
         }else if (view.getId()==R.id.inet){
             Intent intent = new Intent(MainActivity.this, TagihanActivity.class);
