@@ -23,6 +23,8 @@ public class Api {
         OkHttpClient.Builder httpClient = new OkHttpClient.Builder();
 // add your other interceptors …
 
+        
+
 // add logging as last interceptor
         httpClient.addInterceptor(logging);  // <-- this is the important line!
 
