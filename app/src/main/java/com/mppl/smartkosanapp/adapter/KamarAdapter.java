@@ -1,5 +1,7 @@
 package com.mppl.smartkosanapp.adapter;
 
+import android.content.Context;
+import android.support.annotation.NonNull;
 import android.support.v4.app.FragmentActivity;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -9,18 +11,27 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 
-import com.bumptech.glide.Glide;
-import com.mppl.smartkosanapp.Fragment.KamarFragment;
 import com.mppl.smartkosanapp.R;
 import com.mppl.smartkosanapp.model.Kamar;
 
 import java.util.List;
 
-public class KamarAdapter extends RecyclerView.Adapter<KamarAdapter.MyViewHolder> {
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
+public class KamarAdapter extends RecyclerView.Adapter<KamarAdapter.ListViewHolder> {
 
 
-    private KamarFragment mContext;
+    private Context mContext;
     private List<Kamar> kamarList;
+
+    public List<Kamar> getKamarList() {
+        return kamarList;
+    }
+
+    public void setKamarList(List<Kamar> kamarList) {
+        this.kamarList = kamarList;
+    }
 
     public KamarAdapter(FragmentActivity activity) {
     }
@@ -39,29 +50,42 @@ public class KamarAdapter extends RecyclerView.Adapter<KamarAdapter.MyViewHolder
         }
     }
 
-    public KamarAdapter (KamarFragment mContext,List<Kamar> kamarList){
-        this.mContext = mContext;
+    public KamarAdapter (List<Kamar> kamarList){
         this.kamarList = kamarList;
     }
     @Override
-    public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View itemView = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.item_kamar,parent,false);
-
-        return new MyViewHolder(itemView);
+    public ListViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_kamar, parent, false);
+        return new ListViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(final MyViewHolder holder, int position) {
-        Kamar kamar = kamarList.get(position);
-        holder.kode.setText(""+(kamar.getKodeKamar()));
-        holder.status.setText(kamar.getStatus());
-
-        Glide.with(mContext).load(kamar.getGambar()).into(holder.gambar);
+    public void onBindViewHolder(@NonNull KamarAdapter.ListViewHolder holder, int position) {
+        final Kamar p = getKamarList().get(position);
+        holder.tvId.setText(p.getIdKamar());
+        holder.tvKode.setText(p.getKodeKamar());
+        holder.tvStatus.setText(p.getStatus());
     }
 
     @Override
     public int getItemCount() {
-        return kamarList.size();
+        return getKamarList().size();
+    }
+
+    class ListViewHolder extends RecyclerView.ViewHolder {
+
+        @BindView(R.id.tv_kode_kamar)
+        TextView tvKode;
+        @BindView(R.id.tv_nama_kamar)
+        TextView tvId;
+        @BindView(R.id.status)
+        TextView tvStatus;
+
+
+        public ListViewHolder(View itemView) {
+            super(itemView);
+            ButterKnife.bind(this, itemView);
+        }
     }
 }
+

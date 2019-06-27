@@ -1,5 +1,6 @@
 package com.mppl.smartkosanapp.rest;
 
+import com.mppl.smartkosanapp.getmodel.GetKamar;
 import com.mppl.smartkosanapp.model.Fasilitas;
 import com.mppl.smartkosanapp.model.Kamar;
 import com.mppl.smartkosanapp.model.Tagihan;
@@ -12,7 +13,7 @@ import retrofit2.http.POST;
 public interface ApiInterface {
 
     @GET("Kamar/datakamar")
-    Call<Kamar>getKamar();
+    Call<GetKamar>getKamar();
 
     @GET("Tagihan/tagihan")
     Call<Tagihan>getTagihan();

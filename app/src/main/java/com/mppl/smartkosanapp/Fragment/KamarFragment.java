@@ -1,21 +1,30 @@
 package com.mppl.smartkosanapp.Fragment;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.mppl.smartkosanapp.R;
 import com.mppl.smartkosanapp.adapter.KamarAdapter;
+import com.mppl.smartkosanapp.getmodel.GetKamar;
 import com.mppl.smartkosanapp.model.Kamar;
+import com.mppl.smartkosanapp.rest.Api;
+import com.mppl.smartkosanapp.rest.ApiInterface;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 
 public class KamarFragment extends Fragment {
@@ -38,21 +47,40 @@ public class KamarFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_kamar, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_kamar, container, false);
 
-        rvKamar = view.findViewById(R.id.rv_kamar);
+        rvKamar = rootView.findViewById(R.id.rv_kamar);
+        rvKamar.setHasFixedSize(true);
 
-        preparekamarDumyumy();
-        return view;
+        rvKamar.setLayoutManager(new LinearLayoutManager(this.getActivity()));
+
+        getData();
+
+
+        return rootView;
     }
 
-    private void preparekamarDumyumy() {
+    private void getData() {
         final KamarAdapter kamarAdapter = new KamarAdapter(this.getActivity());
+//        sessionManager = new SessionManager(getActivity().getApplicationContext());
+        ApiInterface apiInterface = Api.getUrl().create(ApiInterface.class);
+        Call<GetKamar> call = apiInterface.getKamar();
 
+        call.enqueue(new Callback<GetKamar>() {
+            @Override
+            public void onResponse(Call<GetKamar> call, Response<GetKamar> response) {
+//                progressBar.setVisibility(View.GONE);
+                List<Kamar> listKamar = response.body().getResult();
+                kamarAdapter.setKamarList(listKamar);
+                rvKamar.setAdapter(kamarAdapter);
+            }
 
+            @Override
+            public void onFailure(Call<GetKamar> call, Throwable t) {
 
+            }
+        });
     }
 
-
-    }
+}
 
