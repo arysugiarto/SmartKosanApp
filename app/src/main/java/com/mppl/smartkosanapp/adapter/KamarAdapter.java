@@ -1,5 +1,6 @@
 package com.mppl.smartkosanapp.adapter;
 
+import android.support.v4.app.FragmentActivity;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,6 +21,10 @@ public class KamarAdapter extends RecyclerView.Adapter<KamarAdapter.MyViewHolder
 
     private KamarFragment mContext;
     private List<Kamar> kamarList;
+
+    public KamarAdapter(FragmentActivity activity) {
+    }
+
 
     public class MyViewHolder extends RecyclerView.ViewHolder{
             public TextView kode,status;
@@ -49,7 +54,7 @@ public class KamarAdapter extends RecyclerView.Adapter<KamarAdapter.MyViewHolder
     @Override
     public void onBindViewHolder(final MyViewHolder holder, int position) {
         Kamar kamar = kamarList.get(position);
-        holder.kode.setText(""+(kamar.getKode()));
+        holder.kode.setText(""+(kamar.getKodeKamar()));
         holder.status.setText(kamar.getStatus());
 
         Glide.with(mContext).load(kamar.getGambar()).into(holder.gambar);

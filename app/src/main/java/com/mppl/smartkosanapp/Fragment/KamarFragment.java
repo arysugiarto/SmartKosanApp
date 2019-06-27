@@ -42,29 +42,17 @@ public class KamarFragment extends Fragment {
 
         rvKamar = view.findViewById(R.id.rv_kamar);
 
-        kamarList = new ArrayList<>();
-        adapter = new KamarAdapter(this,kamarList);
-
-        RecyclerView.LayoutManager mlayoutManager = new LinearLayoutManager(getContext());
-        rvKamar.setLayoutManager(mlayoutManager);
-        rvKamar.setAdapter(adapter);
-
-        preparekamarDumy();
+        preparekamarDumyumy();
         return view;
     }
 
-    private void preparekamarDumy(){
-        int[] covers = new int[]{
-                R.drawable.gambar1,
-                R.drawable.gambar1};
+    private void preparekamarDumyumy() {
+        final KamarAdapter kamarAdapter = new KamarAdapter(this.getActivity());
 
-        Kamar a = new Kamar(01,"Kosong",covers[0]);
-        kamarList.add(a);
 
-        a = new Kamar(02,"Penuh",covers[1]);
-        kamarList.add(a);
 
-        adapter.notifyDataSetChanged();
-        }
+    }
+
+
     }
 

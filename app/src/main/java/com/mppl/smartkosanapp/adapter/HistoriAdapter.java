@@ -49,9 +49,9 @@ public class HistoriAdapter extends RecyclerView.Adapter<HistoriAdapter.MyViewHo
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         Histori histori = historiList.get(position);
-        holder.jenisPembayaran.setText(""+(histori.getJenisPembayaran()));
-        holder.tanggalPembayaran.setText(""+(histori.getTanggalPembayaran()));
-        holder.totalPembayaran.setText(""+(histori.getTotalPembayaran()));
+        holder.jenisPembayaran.setText(""+(histori.getJenis()));
+        holder.tanggalPembayaran.setText(""+(histori.getTglBayar()));
+//        holder.totalPembayaran.setText(""+(histori.getTotalPembayaran()));
         holder.totalPembayaran.setText(""+(histori.getStatus()));
     }
 

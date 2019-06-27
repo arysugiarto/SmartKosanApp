@@ -50,9 +50,8 @@ public class TagihanAdapter extends RecyclerView.Adapter<TagihanAdapter.MyViewHo
     @Override
     public void onBindViewHolder(final MyViewHolder holder, int position) {
         Tagihan tagihan = tagihanList.get(position);
-        holder.jenisTagihan.setText(""+(tagihan.getJenisTagihan()));
-        holder.tanggal.setText(""+(tagihan.getTanggal()));
-        holder.totalTagihan.setText(""+(tagihan.getTotalTagihan()));
+        holder.jenisTagihan.setText(""+(tagihan.getJenis()));
+        holder.tanggal.setText(""+(tagihan.getTglBayar()));
 
     }
 
