@@ -6,7 +6,7 @@ import com.google.gson.annotations.SerializedName;
 public class User {
     @SerializedName("id_user")
     @Expose
-    private String idUser;
+    private int idUser;
     @SerializedName("nama")
     @Expose
     private String nama;
@@ -32,8 +32,45 @@ public class User {
     @Expose
     private String akses;
 
+    @SerializedName("data")
+    private Boolean error;
 
-    public User(String idUser, String nama, String password, String jk, String nohp, String email, String alamat, String status, String akses) {
+    @SerializedName("message")
+    private String message;
+
+    @SerializedName("user")
+    private User user;
+
+    public User(Boolean error, String message, User user) {
+        this.error = error;
+        this.message = message;
+        this.user = user;
+    }
+
+    public User(String name, String email, String password, String hp, String jk, String alamat) {
+        this.nama = name;
+        this.email = email;
+        this.password = password;
+        this.jk = jk;
+        this.alamat = alamat;
+        this.nohp = hp;
+
+    }
+
+    public Boolean getError() {
+        return error;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+
+    public User(int idUser, String nama, String password, String jk) {
         this.idUser = idUser;
         this.nama = nama;
         this.password = password;
@@ -53,11 +90,11 @@ public class User {
         this.akses = akses;
     }
 
-    public String getIdUser() {
+    public int getIdUser() {
         return idUser;
     }
 
-    public void setIdUser(String idUser) {
+    public void setIdUser(int idUser) {
         this.idUser = idUser;
     }
 

@@ -27,20 +27,15 @@
             android:layout_gravity="center" />
     </android.support.v7.widget.Toolbar>
 
-    <!-- TODO: Update blank fragment layout -->
-    <!--<android.support.v7.widget.RecyclerView-->
-    <!--android:id="@+id/rv_klinik_home"-->
-    <!--android:layout_width="match_parent"-->
-    <!--android:layout_height="wrap_content">-->
+     TODO: Update blank fragment layout
+    <android.support.v7.widget.RecyclerView
+    android:id="@+id/rv_tagihan"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+        tools:listitem="@layout/item_tagihan">
 
-    <!--</android.support.v7.widget.RecyclerView>-->
+    </android.support.v7.widget.RecyclerView>
 
-    //static demo
-    <include
-        layout="@layout/item_tagihan"/>
-    <include
-        layout="@layout/item_tagihan"/>
-    <include
-        layout="@layout/item_tagihan"/>
+
 
 </LinearLayout>

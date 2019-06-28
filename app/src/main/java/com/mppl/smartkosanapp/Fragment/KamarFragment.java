@@ -12,12 +12,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.mppl.smartkosanapp.Activity.KamarActivity;
 import com.mppl.smartkosanapp.R;
 import com.mppl.smartkosanapp.adapter.KamarAdapter;
 import com.mppl.smartkosanapp.getmodel.GetKamar;
 import com.mppl.smartkosanapp.model.Kamar;
 import com.mppl.smartkosanapp.rest.Api;
 import com.mppl.smartkosanapp.rest.ApiInterface;
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -73,6 +75,7 @@ public class KamarFragment extends Fragment {
                 List<Kamar> listKamar = response.body().getResult();
                 kamarAdapter.setKamarList(listKamar);
                 rvKamar.setAdapter(kamarAdapter);
+                reloadView(kamarAdapter,listKamar);
             }
 
             @Override
@@ -82,5 +85,18 @@ public class KamarFragment extends Fragment {
         });
     }
 
+    private void clickItemDetail(Kamar kamar) {
+        Intent detailActivity = new Intent(getActivity(), KamarActivity.class);
+        detailActivity.putExtra("id_kamar", kamar.getIdKamar());
+        startActivity(detailActivity);
+        getActivity().overridePendingTransition(0, 0);
+    }
+
+    public void reloadView(RecyclerView.Adapter adapter, final List<Kamar> list) {
+        rvKamar.setAdapter(adapter);
+        ItemClickSupport.addTo(rvCategory).setOnItemClickListener(new ItemClickSupport.OnItemClickListener() {
+        });
+
+    }
 }
 

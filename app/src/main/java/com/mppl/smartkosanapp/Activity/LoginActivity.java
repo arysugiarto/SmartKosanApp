@@ -1,5 +1,6 @@
 package com.mppl.smartkosanapp.Activity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -7,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
@@ -23,10 +25,22 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 import com.mppl.smartkosanapp.R;
+import com.mppl.smartkosanapp.helper.SharedPref;
+import com.mppl.smartkosanapp.model.User;
+import com.mppl.smartkosanapp.rest.ApiInterface;
+import com.mppl.smartkosanapp.rest.Constant;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener  {
 
     private Button btnMoveActivity;
+    private Button btnSigIn;
+    private EditText editTextEmail,editTextPassword;
 
     //a constant for detecting the login intent result
     private static final int RC_SIGN_IN = 234;
@@ -47,6 +61,14 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
         btnMoveActivity = findViewById(R.id.buttonsignin);
         btnMoveActivity.setOnClickListener(this);
+
+        editTextEmail = findViewById(R.id.email);
+        editTextPassword = findViewById(R.id.password);
+
+        btnSigIn = findViewById(R.id.buttonsignin);
+
+        btnSigIn.setOnClickListener(this);
+
 
 
         //first we intialized the FirebaseAuth object
@@ -146,13 +168,67 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         startActivityForResult(signInIntent, RC_SIGN_IN);
     }
 
-@Override
-    public void onClick(View v) {
-        switch (v.getId()){
-            case R.id.buttonsignin:
-                Intent moveIntent = new Intent(LoginActivity.this, MainActivity.class);
-                startActivity(moveIntent);
-                break;
+//@Override
+//    public void onClick(View v) {
+//        switch (v.getId()){
+//            case R.id.buttonsignin:
+//                Intent moveIntent = new Intent(LoginActivity.this, MainActivity.class);
+//                startActivity(moveIntent);
+//                break;
+//        }
+//    }
+
+    public void login(View view) {
+        Intent intent = new Intent(LoginActivity.this,RegisterActivity.class);
+        startActivity(intent);
+    }
+
+
+    private void userSignIn(){
+        final ProgressDialog progressDialog = new ProgressDialog(this);
+        progressDialog.setMessage("Signin Up...");
+        progressDialog.show();
+
+        String email = editTextEmail.getText().toString().trim();
+        String password = editTextPassword.getText().toString().trim();
+
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(Constant.BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+
+        ApiInterface service = retrofit.create(ApiInterface.class);
+
+        Call<User> call = service.userLogin(email,password);
+
+        call.enqueue(new Callback<User>() {
+            @Override
+            public void onResponse(Call<User> call, Response<User> response) {
+                progressDialog.dismiss();
+                if (!response.body().getError()){
+                    if (!response.body().getError()){
+                        finish();
+                        SharedPref.getInstance(getApplicationContext()).userLogin(response.body().getUser());
+                        startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                    }else {
+                        Toast.makeText(getApplicationContext(), "Password salah",Toast.LENGTH_LONG).show();
+
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(Call<User> call, Throwable t) {
+                progressDialog.dismiss();
+                Toast.makeText(getApplicationContext(), t.getMessage(),Toast.LENGTH_LONG).show();
+            }
+        });
+    }
+
+    @Override
+    public void onClick(View view) {
+        if (view == btnSigIn){
+            userSignIn();
         }
     }
 }
