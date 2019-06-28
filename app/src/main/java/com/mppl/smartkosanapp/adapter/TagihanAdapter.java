@@ -6,10 +6,8 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.mppl.smartkosanapp.Fragment.TagihanFragment;
 import com.mppl.smartkosanapp.R;
 import com.mppl.smartkosanapp.model.Tagihan;
 
@@ -82,6 +80,8 @@ public class TagihanAdapter extends RecyclerView.Adapter<TagihanAdapter.ListView
         TextView jenisTagihan;
         @BindView(R.id.tv_date_tagihan)
         TextView tanggal;
+//        @BindView(R.id.tv_harga)
+//        TextView harga;
 //        @BindView(R.id.tv_harga)
 //        TextView tvStatus;
 

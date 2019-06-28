@@ -1,13 +1,10 @@
 package com.mppl.smartkosanapp.Fragment;
 
-import android.content.Context;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,9 +16,8 @@ import com.mppl.smartkosanapp.getmodel.GetKamar;
 import com.mppl.smartkosanapp.model.Kamar;
 import com.mppl.smartkosanapp.rest.Api;
 import com.mppl.smartkosanapp.rest.ApiInterface;
+import com.mppl.smartkosanapp.rest.ItemClickSupport;
 
-
-import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
@@ -53,13 +49,18 @@ public class KamarFragment extends Fragment {
 
         rvKamar = rootView.findViewById(R.id.rv_kamar);
         rvKamar.setHasFixedSize(true);
-
         rvKamar.setLayoutManager(new LinearLayoutManager(this.getActivity()));
 
         getData();
 
-
         return rootView;
+    }
+
+    private void clickItemDetail(Kamar kamar) {
+        Intent kamarActivity = new Intent(getActivity(), KamarActivity.class);
+        kamarActivity.putExtra("id_kamar", kamar.getIdKamar());
+        startActivity(kamarActivity);
+        getActivity().overridePendingTransition(0, 0);
     }
 
     private void getData() {
@@ -75,6 +76,7 @@ public class KamarFragment extends Fragment {
                 List<Kamar> listKamar = response.body().getResult();
                 kamarAdapter.setKamarList(listKamar);
                 rvKamar.setAdapter(kamarAdapter);
+                kamarAdapter.setKamarList(listKamar);
                 reloadView(kamarAdapter,listKamar);
             }
 
@@ -85,16 +87,16 @@ public class KamarFragment extends Fragment {
         });
     }
 
-    private void clickItemDetail(Kamar kamar) {
-        Intent detailActivity = new Intent(getActivity(), KamarActivity.class);
-        detailActivity.putExtra("id_kamar", kamar.getIdKamar());
-        startActivity(detailActivity);
-        getActivity().overridePendingTransition(0, 0);
-    }
 
     public void reloadView(RecyclerView.Adapter adapter, final List<Kamar> list) {
         rvKamar.setAdapter(adapter);
-        ItemClickSupport.addTo(rvCategory).setOnItemClickListener(new ItemClickSupport.OnItemClickListener() {
+        ItemClickSupport.addTo(rvKamar).setOnItemClickListener(new ItemClickSupport.OnItemClickListener() {
+            @Override
+            public void onItemClicked(RecyclerView recyclerView, final int position, View v) {
+                Kamar listKamar = list.get(position);
+                String id_kamar = listKamar.getIdKamar();
+                clickItemDetail(list.get(position));
+            }
         });
 
     }

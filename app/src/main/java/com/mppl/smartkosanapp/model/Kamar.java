@@ -21,6 +21,10 @@ public class Kamar {
     @Expose
     private String status;
 
+    @SerializedName("ket")
+    @Expose
+    private String ket;
+
     @SerializedName("id_user")
     @Expose
     private String isUser;
@@ -35,12 +39,13 @@ public class Kamar {
     }
 
 
-    public Kamar(String idKamar, String kodeKamar, String harga, String status, String isUser, String gambar) {
+    public Kamar(String idKamar, String kodeKamar, String harga, String status, String isUser, String gambar, String ket) {
         this.idKamar = idKamar;
         this.kodeKamar = kodeKamar;
         this.harga = harga;
         this.status = status;
         this.isUser = isUser;
+        this.ket = ket;
         this.gambar = gambar;
 
     }
@@ -91,5 +96,13 @@ public class Kamar {
 
     public void setGambar(String gambar) {
         this.gambar = gambar;
+    }
+
+    public String getKet() {
+        return ket;
+    }
+
+    public void setKet(String ket) {
+        this.ket = ket;
     }
 }

@@ -64,7 +64,7 @@ public class KamarAdapter extends RecyclerView.Adapter<KamarAdapter.ListViewHold
         final Kamar p = getKamarList().get(position);
         holder.tvId.setText(p.getIdKamar());
         holder.tvKode.setText(p.getKodeKamar());
-        holder.tvStatus.setText(p.getStatus());
+        holder.tvStatus.setText(p.getKet());
     }
 
     @Override

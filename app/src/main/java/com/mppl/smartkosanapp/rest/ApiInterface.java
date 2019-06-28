@@ -3,6 +3,7 @@ package com.mppl.smartkosanapp.rest;
 import com.mppl.smartkosanapp.getmodel.GetKamar;
 import com.mppl.smartkosanapp.getmodel.GetTagihan;
 import com.mppl.smartkosanapp.model.Fasilitas;
+import com.mppl.smartkosanapp.model.Kamar;
 import com.mppl.smartkosanapp.model.User;
 
 import retrofit2.Call;
@@ -10,6 +11,7 @@ import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.Query;
 
 public interface ApiInterface {
 
@@ -21,6 +23,9 @@ public interface ApiInterface {
 
     @GET("Fasilitas/fasilitas")
     Call<Fasilitas>getFasilitas();
+
+    @GET("Kamar/datailKamar")
+    Call<Kamar> getDetailKamar(@Query("id_kamar") String id_kamar);
 
     @FormUrlEncoded
     @POST("User/signup")
