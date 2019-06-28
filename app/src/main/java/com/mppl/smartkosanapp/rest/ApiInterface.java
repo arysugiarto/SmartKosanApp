@@ -4,6 +4,7 @@ import com.mppl.smartkosanapp.getmodel.GetKamar;
 import com.mppl.smartkosanapp.getmodel.GetTagihan;
 import com.mppl.smartkosanapp.model.Fasilitas;
 import com.mppl.smartkosanapp.model.Kamar;
+import com.mppl.smartkosanapp.model.Tagihan;
 import com.mppl.smartkosanapp.model.User;
 
 import retrofit2.Call;
@@ -16,16 +17,19 @@ import retrofit2.http.Query;
 public interface ApiInterface {
 
     @GET("Kamar/datakamar")
-    Call<GetKamar>getKamar();
+    Call<GetKamar> getKamar();
 
     @GET("Tagihan/tagihan")
     Call<GetTagihan> getTagihan();
 
     @GET("Fasilitas/fasilitas")
-    Call<Fasilitas>getFasilitas();
+    Call<Fasilitas> getFasilitas();
 
     @GET("Kamar/datailKamar")
     Call<Kamar> getDetailKamar(@Query("id_kamar") String id_kamar);
+
+    @GET("Tagihan/tagihan")
+    Call<Tagihan> getDetailTagihan(@Query("id_pembayaran") String id_pembayaran);
 
     @FormUrlEncoded
     @POST("User/signup")
@@ -36,6 +40,7 @@ public interface ApiInterface {
             @Field("no_hp") String no_hp,
             @Field("jk") String jk,
             @Field("alamat") String alamat);
+
     @FormUrlEncoded
     @POST("login")
     Call<User> userLogin(
@@ -43,6 +48,6 @@ public interface ApiInterface {
             @Field("password") String password
     );
 
-    Call<User>postsignup();
+    Call<User> postsignup();
 
 }

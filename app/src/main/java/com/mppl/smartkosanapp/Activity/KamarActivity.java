@@ -24,8 +24,8 @@ public class KamarActivity extends AppCompatActivity {
     TextView tvstatuskamar;
 
 
-
     String id;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,7 +37,7 @@ public class KamarActivity extends AppCompatActivity {
 
     }
 
-    private void getData(){
+    private void getData() {
         ApiInterface apiInterface = Api.getUrl().create(ApiInterface.class);
         Call<Kamar> call = apiInterface.getDetailKamar(id);
 
