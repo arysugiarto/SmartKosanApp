@@ -19,11 +19,8 @@ public class KamarActivity extends AppCompatActivity {
 
     @BindView(R.id.kodenya)
     TextView tvkodenya;
-
     @BindView(R.id.statusKamar)
     TextView tvstatuskamar;
-
-
     String id;
 
     @Override
@@ -37,17 +34,29 @@ public class KamarActivity extends AppCompatActivity {
 
     }
 
-    private void getData() {
+    private void getData(){
         ApiInterface apiInterface = Api.getUrl().create(ApiInterface.class);
+//        sessionManager = new SessionManager(getApplicationContext());
+//        HashMap<String,String> user = sessionManager.getUserDetils();
+//        String id = user.get(SessionManager.ID_PRESTASI);
+
         Call<Kamar> call = apiInterface.getDetailKamar(id);
 
         call.enqueue(new Callback<Kamar>() {
             @Override
             public void onResponse(Call<Kamar> call, Response<Kamar> response) {
+//                progressBar.setVisibility(View.GONE);
 
-//                Acara ambilData = new Acara();
                 tvkodenya.setText(response.body().getKodeKamar());
-                tvstatuskamar.setText(response.body().getKet());
+                tvstatuskamar.setText(response.body().getStatus());
+
+
+////                tvTanggal.setText(response.body().getTanggal());
+//                Glide.with(DetailPrestasiActivity.this)
+//                        .load("http://sman14bdg.dscunikom.com/uploads/prestasi/".concat(response.body().getImage()))
+//                        .into(imgDetail);
+
+//                Log.e("Nama Prestasi ","OnRespone "+String.valueOf(response.body().getNamaPrestasi()));
             }
 
             @Override

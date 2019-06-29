@@ -4,6 +4,7 @@ import com.mppl.smartkosanapp.getmodel.GetKamar;
 import com.mppl.smartkosanapp.getmodel.GetTagihan;
 import com.mppl.smartkosanapp.model.Fasilitas;
 import com.mppl.smartkosanapp.model.Kamar;
+import com.mppl.smartkosanapp.model.Login;
 import com.mppl.smartkosanapp.model.Tagihan;
 import com.mppl.smartkosanapp.model.User;
 
@@ -42,8 +43,8 @@ public interface ApiInterface {
             @Field("alamat") String alamat);
 
     @FormUrlEncoded
-    @POST("login")
-    Call<User> userLogin(
+    @POST("User/login")
+    Call<Login> userLogin(
             @Field("email") String email,
             @Field("password") String password
     );
