@@ -1,6 +1,7 @@
 package com.mppl.smartkosanapp.model;
 
 public class Register {
+
     String status;
 
     public String getStatus() {

@@ -40,7 +40,7 @@ public interface ApiInterface {
             @Field("email") String email,
             @Field("password") String password,
             @Field("no_hp") String no_hp,
-//            @Field("jk") String jk,
+            @Field("jk") String jk,
             @Field("alamat") String alamat);
 
     @FormUrlEncoded
