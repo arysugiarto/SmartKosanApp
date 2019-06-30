@@ -7,10 +7,18 @@ import android.widget.TextView;
 
 import com.mppl.smartkosanapp.R;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 public class TagihanActivity extends AppCompatActivity {
 
-    TextView tvtagihan,tvtgl;
-//    String id,sjenis,stgl;
+    @BindView(R.id.tagihandetail)
+    TextView jenis;
+    @BindView(R.id.harga)
+    TextView tgl;
+    private String sjenis, stgl ;
+    String id;
+
 
 
     @Override
@@ -18,11 +26,11 @@ public class TagihanActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tagihan);
 
-//        id = getIntent().getStringExtra("id_pembayaran");
+        id = getIntent().getStringExtra("id_pembayaran");
 //
-//        tvtagihan = findViewById(R.id.tv_jenis_pembayaran);
-//        tvtgl = findViewById(R.id.tv_tgl);
-//        ButterKnife.bind(this);
+        jenis = findViewById(R.id.tv_jenis_pembayaran);
+        tgl = findViewById(R.id.tv_tgl);
+        ButterKnife.bind(this);
 
 
 
@@ -31,11 +39,11 @@ public class TagihanActivity extends AppCompatActivity {
 
     private void getData() {
 
-//        sjenis = getIntent().getStringExtra("jenis");
-//        stgl = getIntent().getStringExtra("tgl");
+        sjenis = getIntent().getStringExtra("jenis");
+        stgl = getIntent().getStringExtra("tgl");
 //
-//        tvtagihan.setText(sjenis);
-//        tvtgl.setText(stgl);
+        jenis.setText(sjenis);
+        tgl.setText(stgl);
     }
 
 

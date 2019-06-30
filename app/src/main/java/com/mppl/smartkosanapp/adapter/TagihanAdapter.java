@@ -10,7 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.mppl.smartkosanapp.Activity.KamarActivity;
+import com.mppl.smartkosanapp.Activity.TagihanActivity;
 import com.mppl.smartkosanapp.R;
 import com.mppl.smartkosanapp.model.Tagihan;
 
@@ -64,10 +64,9 @@ public class TagihanAdapter extends RecyclerView.Adapter<TagihanAdapter.ListView
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(mContext.getActivity(), KamarActivity.class);
+                Intent i = new Intent(mContext.getActivity(), TagihanActivity.class);
                 i.putExtra("jenis",tagihan.getJenis());
                 i.putExtra("tgl",tagihan.getTglBayar());
-//                i.putExtra("gambar1",p.getGambar());
                 i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 mContext.getActivity().startActivity(i);
 
@@ -91,10 +90,6 @@ public class TagihanAdapter extends RecyclerView.Adapter<TagihanAdapter.ListView
         TextView jenisTagihan;
         @BindView(R.id.tv_date_tagihan)
         TextView tanggal;
-//        @BindView(R.id.tv_harga)
-//        TextView harga;
-//        @BindView(R.id.tv_harga)
-//        TextView tvStatus;
 
 
         public ListViewHolder(View itemView) {

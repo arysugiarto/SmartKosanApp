@@ -85,7 +85,6 @@ public class TagihanFragment extends Fragment {
         kamarActivity.putExtra("id_kamar", tagihan.getIdUser());
         kamarActivity.putExtra("jenis", tagihan.getJenis());
         kamarActivity.putExtra("tgl", tagihan.getTglBayar());
-//        kamarActivity.putExtra("gambar1", kamar.getGambar());
         startActivity(kamarActivity);
         getActivity().overridePendingTransition(0, 0);
     }
