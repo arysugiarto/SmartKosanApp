@@ -1,5 +1,6 @@
 package com.mppl.smartkosanapp.Fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -8,15 +9,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.mppl.smartkosanapp.Activity.TagihanActivity;
 import com.mppl.smartkosanapp.R;
-import com.mppl.smartkosanapp.adapter.KamarAdapter;
 import com.mppl.smartkosanapp.adapter.TagihanAdapter;
-import com.mppl.smartkosanapp.getmodel.GetKamar;
 import com.mppl.smartkosanapp.getmodel.GetTagihan;
-import com.mppl.smartkosanapp.model.Kamar;
 import com.mppl.smartkosanapp.model.Tagihan;
 import com.mppl.smartkosanapp.rest.Api;
 import com.mppl.smartkosanapp.rest.ApiInterface;
+import com.mppl.smartkosanapp.rest.ItemClickSupport;
 
 import java.util.List;
 
@@ -70,6 +70,7 @@ public class TagihanFragment extends Fragment {
                 List<Tagihan> listTagihan = response.body().getResult();
                 tagihanAdapter.setTagihanList(listTagihan);
                 rvTagihan.setAdapter(tagihanAdapter);
+                reloadView(tagihanAdapter,listTagihan);
             }
 
             @Override
@@ -77,6 +78,29 @@ public class TagihanFragment extends Fragment {
 
             }
         });
+    }
+
+    private void clickItemDetail(Tagihan tagihan) {
+        Intent kamarActivity = new Intent(getActivity(), TagihanActivity.class);
+        kamarActivity.putExtra("id_kamar", tagihan.getIdUser());
+        kamarActivity.putExtra("jenis", tagihan.getJenis());
+        kamarActivity.putExtra("tgl", tagihan.getTglBayar());
+//        kamarActivity.putExtra("gambar1", kamar.getGambar());
+        startActivity(kamarActivity);
+        getActivity().overridePendingTransition(0, 0);
+    }
+
+    public void reloadView(RecyclerView.Adapter adapter, final List<Tagihan> list) {
+        rvTagihan.setAdapter(adapter);
+        ItemClickSupport.addTo(rvTagihan).setOnItemClickListener(new ItemClickSupport.OnItemClickListener() {
+            @Override
+            public void onItemClicked(RecyclerView recyclerView, final int position, View v) {
+                Tagihan listTagihan = list.get(position);
+                String idKamar = listTagihan.getIdPembayaran();
+                clickItemDetail(list.get(position));
+            }
+        });
+
     }
 
 

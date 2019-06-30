@@ -70,7 +70,7 @@ public class User {
     }
 
 
-    public User(int idUser, String nama, String password, String jk) {
+    public User(int idUser, String nama, String password, String jk,String nohp,String email, String alamat,String status,String akses) {
         this.idUser = idUser;
         this.nama = nama;
         this.password = password;

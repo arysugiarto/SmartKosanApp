@@ -1,5 +1,7 @@
 package com.mppl.smartkosanapp.adapter;
 
+import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v4.app.FragmentActivity;
 import android.support.v7.widget.RecyclerView;
@@ -8,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.mppl.smartkosanapp.Activity.KamarActivity;
 import com.mppl.smartkosanapp.R;
 import com.mppl.smartkosanapp.model.Tagihan;
 
@@ -20,6 +23,7 @@ public class TagihanAdapter extends RecyclerView.Adapter<TagihanAdapter.ListView
 
     private TagihanAdapter mContext;
     private List<Tagihan> tagihanList;
+    private FragmentActivity activity;
 
     public List<Tagihan> getTagihanList() {
         return tagihanList;
@@ -29,21 +33,13 @@ public class TagihanAdapter extends RecyclerView.Adapter<TagihanAdapter.ListView
         this.tagihanList = tagihanList;
     }
 
-    public TagihanAdapter(FragmentActivity activity) {
+
+    public void setActivity(Context activity) {
+        this.activity = (FragmentActivity) activity;
     }
 
-    public class MyViewHolder extends RecyclerView.ViewHolder{
-
-        public TextView jenisTagihan, totalTagihan, tanggal;
-
-        public MyViewHolder(@NonNull View view) {
-            super(view);
-
-            jenisTagihan = view.findViewById(R.id.tv_jenis_tagihan);
-            totalTagihan = view.findViewById(R.id.tv_harga);
-            tanggal = view.findViewById(R.id.tv_nama_klinik);
-        }
-
+    public TagihanAdapter(FragmentActivity activity) {
+        this.activity = activity;
     }
 
     public TagihanAdapter(TagihanAdapter mContext, List<Tagihan> tagihanList) {
@@ -62,16 +58,31 @@ public class TagihanAdapter extends RecyclerView.Adapter<TagihanAdapter.ListView
 
     @Override
     public void onBindViewHolder(@NonNull ListViewHolder holder, int position) {
-        Tagihan tagihan = tagihanList.get(position);
+        final Tagihan tagihan = tagihanList.get(position);
         holder.jenisTagihan.setText(""+(tagihan.getJenis()));
         holder.tanggal.setText(""+(tagihan.getTglBayar()));
-//        holder.harga.setText(""+(tagihan.get()));
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(mContext.getActivity(), KamarActivity.class);
+                i.putExtra("jenis",tagihan.getJenis());
+                i.putExtra("tgl",tagihan.getTglBayar());
+//                i.putExtra("gambar1",p.getGambar());
+                i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                mContext.getActivity().startActivity(i);
+
+            }
+        });
     }
 
 
     @Override
     public int getItemCount() {
         return tagihanList.size();
+    }
+
+    public Context getActivity() {
+        return activity;
     }
 
     class ListViewHolder extends RecyclerView.ViewHolder {

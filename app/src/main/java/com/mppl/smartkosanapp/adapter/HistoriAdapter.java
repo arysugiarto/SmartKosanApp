@@ -26,7 +26,6 @@ public class HistoriAdapter extends RecyclerView.Adapter<HistoriAdapter.MyViewHo
 
             jenisPembayaran = view.findViewById(R.id.tv_jenis_pembayaran);
             totalPembayaran = view.findViewById(R.id.tv_total_pembayaran);
-            tanggalPembayaran = view.findViewById(R.id.tv_nama_klinik);
             status = view.findViewById(R.id.tv_status);
         }
 

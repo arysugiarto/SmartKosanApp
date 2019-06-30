@@ -1,13 +1,11 @@
 package com.mppl.smartkosanapp.Activity;
 
 import android.content.Intent;
-import android.nfc.Tag;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
-import android.support.annotation.NonNull;
-import android.support.v7.widget.CardView;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -97,7 +95,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
 
     public void card(View view) {
         if (view.getId()==R.id.kamar){
-            Intent intent = new Intent(MainActivity.this, KamarActivity.class);
+            Intent intent = new Intent(MainActivity.this, TagihanActivity.class);
             startActivity(intent);
         }else if (view.getId()==R.id.inet){
             Intent intent = new Intent(MainActivity.this, TagihanActivity.class);

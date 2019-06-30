@@ -59,7 +59,7 @@
         android:layout_marginRight="20dp"
         android:padding="12dp"
         android:drawablePadding="16dp"
-        android:drawableLeft="@drawable/ic_account1"
+        android:drawableLeft="@drawable/ic_vpn_key_black_24dp"
         />
 
     <Button
@@ -76,25 +76,9 @@
         android:textSize="16dp"
         android:textColor="#fff"
         />
-    <android.support.v7.widget.AppCompatButton
-        android:id="@+id/btn_google"
-        android:textColor="@color/blue"
-        android:background="@drawable/btngoogle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="70dp"
-        android:layout_marginRight="70dp"
-        android:padding="12dp"
-        android:gravity="center"
-        android:drawableLeft="@drawable/ic_google"
-        android:layout_marginBottom="8dp"
-        android:text="@string/google" />
-
-
     <TextView
         android:id="@+id/account"
-        android:onClick="login"
+        android:onClick="regis"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Don't have an account?"

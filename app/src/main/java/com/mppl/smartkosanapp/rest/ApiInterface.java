@@ -5,6 +5,7 @@ import com.mppl.smartkosanapp.getmodel.GetTagihan;
 import com.mppl.smartkosanapp.model.Fasilitas;
 import com.mppl.smartkosanapp.model.Kamar;
 import com.mppl.smartkosanapp.model.Login;
+import com.mppl.smartkosanapp.model.Register;
 import com.mppl.smartkosanapp.model.Tagihan;
 import com.mppl.smartkosanapp.model.User;
 
@@ -26,7 +27,7 @@ public interface ApiInterface {
     @GET("Fasilitas/fasilitas")
     Call<Fasilitas> getFasilitas();
 
-    @GET("Kamar/datailKamar")
+    @GET("Kamar/datailkamar")
     Call<Kamar> getDetailKamar(@Query("id_kamar") String id_kamar);
 
     @GET("Tagihan/tagihan")
@@ -34,12 +35,12 @@ public interface ApiInterface {
 
     @FormUrlEncoded
     @POST("User/signup")
-    Call<User> createUser(
+    Call<Register> createUser(
             @Field("nama") String name,
             @Field("email") String email,
             @Field("password") String password,
             @Field("no_hp") String no_hp,
-            @Field("jk") String jk,
+//            @Field("jk") String jk,
             @Field("alamat") String alamat);
 
     @FormUrlEncoded

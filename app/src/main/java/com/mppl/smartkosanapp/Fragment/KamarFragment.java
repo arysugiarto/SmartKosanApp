@@ -18,6 +18,7 @@ import com.mppl.smartkosanapp.rest.Api;
 import com.mppl.smartkosanapp.rest.ApiInterface;
 import com.mppl.smartkosanapp.rest.ItemClickSupport;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
@@ -47,6 +48,9 @@ public class KamarFragment extends Fragment {
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_kamar, container, false);
 
+        kamarList = new ArrayList<>();
+        adapter = new KamarAdapter(this, kamarList);
+
         rvKamar = rootView.findViewById(R.id.rv_kamar);
         rvKamar.setHasFixedSize(true);
         rvKamar.setLayoutManager(new LinearLayoutManager(this.getActivity()));
@@ -54,13 +58,6 @@ public class KamarFragment extends Fragment {
         getData();
 
         return rootView;
-    }
-
-    private void clickItemDetail(Kamar kamar) {
-        Intent kamarActivity = new Intent(getActivity(), KamarActivity.class);
-        kamarActivity.putExtra("id_kamar", kamar.getIdKamar());
-        startActivity(kamarActivity);
-        getActivity().overridePendingTransition(0, 0);
     }
 
     private void getData() {
@@ -87,6 +84,16 @@ public class KamarFragment extends Fragment {
         });
     }
 
+    private void clickItemDetail(Kamar kamar) {
+        Intent kamarActivity = new Intent(getActivity(), KamarActivity.class);
+        kamarActivity.putExtra("id_kamar", kamar.getIdKamar());
+        kamarActivity.putExtra("kode", kamar.getKodeKamar());
+        kamarActivity.putExtra("status", kamar.getStatus());
+//        kamarActivity.putExtra("gambar1", kamar.getGambar());
+        startActivity(kamarActivity);
+        getActivity().overridePendingTransition(0, 0);
+    }
+
 
     public void reloadView(RecyclerView.Adapter adapter, final List<Kamar> list) {
         rvKamar.setAdapter(adapter);
@@ -94,7 +101,7 @@ public class KamarFragment extends Fragment {
             @Override
             public void onItemClicked(RecyclerView recyclerView, final int position, View v) {
                 Kamar listKamar = list.get(position);
-                String id_kamar = listKamar.getIdKamar();
+                String idKamar = listKamar.getIdKamar();
                 clickItemDetail(list.get(position));
             }
         });
