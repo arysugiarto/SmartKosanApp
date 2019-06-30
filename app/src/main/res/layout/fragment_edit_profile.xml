@@ -79,7 +79,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="16dp"
                         android:layout_marginRight="16dp"
-                        android:text="Nama"
+                        android:hint="Nama"
                         android:textSize="20dp"
                         android:textStyle="bold" />
                 </LinearLayout>
@@ -101,7 +101,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="16dp"
                         android:layout_marginRight="16dp"
-                        android:text="Nama"
+                        android:hint="Email"
                         android:textSize="20dp"
                         android:textStyle="bold" />
                 </LinearLayout>
@@ -123,7 +123,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="16dp"
                         android:layout_marginRight="16dp"
-                        android:text="Nama"
+                        android:hint="No Hp"
                         android:textSize="20dp"
                         android:textStyle="bold" />
                 </LinearLayout>
@@ -145,7 +145,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="16dp"
                         android:layout_marginRight="16dp"
-                        android:text="Nama"
+                        android:hint="Alamat"
                         android:textSize="20dp"
                         android:textStyle="bold" />
 
