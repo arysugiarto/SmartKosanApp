@@ -35,7 +35,8 @@ public interface ApiInterface {
 
     @FormUrlEncoded
     @POST("User/signup")
-    Call<Register> createUser(
+    Call<Register> registerRequest(
+            @Field("id_user") String id_user,
             @Field("nama") String name,
             @Field("email") String email,
             @Field("password") String password,

@@ -88,8 +88,8 @@ public class KamarFragment extends Fragment {
         Intent kamarActivity = new Intent(getActivity(), KamarActivity.class);
         kamarActivity.putExtra("id_kamar", kamar.getIdKamar());
         kamarActivity.putExtra("kode", kamar.getKodeKamar());
-        kamarActivity.putExtra("status", kamar.getStatus());
-//        kamarActivity.putExtra("gambar1", kamar.getGambar());
+        kamarActivity.putExtra("ket", kamar.getKet());
+        kamarActivity.putExtra("foto", kamar.getGambar());
         startActivity(kamarActivity);
         getActivity().overridePendingTransition(0, 0);
     }

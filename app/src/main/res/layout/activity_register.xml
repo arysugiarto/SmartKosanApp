@@ -28,6 +28,14 @@
 
     </android.support.v7.widget.Toolbar>
     <EditText
+        android:id="@+id/edt_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="10dp"
+        android:hint="Id"/>
+    <EditText
         android:id="@+id/edt_nama"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -59,26 +67,42 @@
         android:layout_marginRight="16dp"
         android:layout_marginTop="10dp"
         android:hint="no hp"/>
-    <RadioGroup
-        android:id="@+id/radioGender"
+    <!--<RadioGroup-->
+        <!--android:id="@+id/radioGender"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginLeft="16dp"-->
+        <!--android:layout_marginRight="16dp"-->
+        <!--android:layout_marginTop="10dp">-->
+        <!--<RadioButton-->
+            <!--android:id="@+id/radioMale"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:textColor="#AF9A9A"-->
+            <!--android:text="Male"/>-->
+        <!--<RadioButton-->
+            <!--android:id="@+id/radioFemale"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:textColor="#AF9A9A"-->
+            <!--android:text="Male"/>-->
+    <!--</RadioGroup>-->
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp">
+
+    </Spinner>
+    <EditText
+        android:id="@+id/edt_jk"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
-        android:layout_marginTop="10dp">
-        <RadioButton
-            android:id="@+id/radioMale"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="#AF9A9A"
-            android:text="Male"/>
-        <RadioButton
-            android:id="@+id/radioFemale"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="#AF9A9A"
-            android:text="Male"/>
-    </RadioGroup>
+        android:layout_marginTop="10dp"
+        android:hint="jk"/>
 
     <EditText
         android:id="@+id/edt_alamat"

@@ -16,4 +16,9 @@
     <string name="tagihan">Tagihan</string>
     <string name="histori">History</string>
     <string name="kamar">Kamar</string>
+
+    <string-array name="jk">
+    <item>Laki-laki</item>
+    <item>perempuan</item>
+    </string-array>
 </resources>

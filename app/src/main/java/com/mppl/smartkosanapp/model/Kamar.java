@@ -29,7 +29,7 @@ public class Kamar {
     @Expose
     private String isUser;
 
-    @SerializedName("gambar1")
+    @SerializedName("foto")
     @Expose
     private String gambar;
 

@@ -1,11 +1,11 @@
 package com.mppl.smartkosanapp.Activity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.mppl.smartkosanapp.R;
 
 import butterknife.BindView;
@@ -17,6 +17,8 @@ public class KamarActivity extends AppCompatActivity {
     TextView tvkodenya;
     @BindView(R.id.statusKamar)
     TextView tvstatuskamar;
+//    @BindView(R.id.statusKamar)
+//    TextView tvstatuskamar;
 
     private TextView kode, status;
     ImageView tvImg;
@@ -31,48 +33,26 @@ public class KamarActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
 
-        Intent i = getIntent();
-
         kode =  findViewById(R.id.kodenya);
         status =  findViewById(R.id.status);
-//        tvImg = findViewById(R.id.image);
+        tvImg = findViewById(R.id.image);
       getData();
 
-//        getData();
 
     }
 
-//    private void getData(){
-//        ApiInterface apiInterface = Api.getUrl().create(ApiInterface.class);
-//
-//        Call<Kamar> call = apiInterface.getDetailKamar(id);
-//
-//        call.enqueue(new Callback<Kamar>() {
-//            @Override
-//            public void onResponse(Call<Kamar> call, Response<Kamar> response) {
-//                tvkodenya.setText(response.body().getKodeKamar());
-//                tvstatuskamar.setText(response.body().getStatus());
-//
-//            }
-//
-//            @Override
-//            public void onFailure(Call<Kamar> call, Throwable t) {
-//
-//            }
-//        });
-//    }
 
     private void getData(){
 
-//        img = getIntent().getStringExtra("gambar1");
+        img = getIntent().getStringExtra("foto");
         skode = getIntent().getStringExtra("kode");
-        sstatus = getIntent().getStringExtra("status");
+        sstatus = getIntent().getStringExtra("ket");
 
         tvkodenya.setText(skode);
         tvstatuskamar.setText(sstatus);
-//        Glide.with(getApplicationContext())
-//                .load("http://192.168.1.10/webservice/SmartKosanWebService/foto_kamar/"+img)
-//                .into(tvImg);
+        Glide.with(getApplicationContext())
+                .load("http://kosan.haptic.id/foto_kamar/"+img)
+                .into(tvImg);
     }
 
 

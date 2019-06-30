@@ -17,7 +17,6 @@ import com.mppl.smartkosanapp.model.Login;
 import com.mppl.smartkosanapp.rest.Api;
 import com.mppl.smartkosanapp.rest.ApiInterface;
 
-import cn.pedant.SweetAlert.SweetAlertDialog;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -27,7 +26,6 @@ public class LoginActivity extends AppCompatActivity   {
      Button btnSigIn;
      EditText editTextEmail,editTextPassword;
      SessionManager sessionManager;
-    SweetAlertDialog sweetAlertDialog;
 
 
 
