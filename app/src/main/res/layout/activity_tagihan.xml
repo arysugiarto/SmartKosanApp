@@ -91,31 +91,40 @@
             android:textSize="18sp"/>
 
         <Button
+            android:id="@+id/pilih"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
             android:layout_marginTop="10dp"
             android:layout_marginRight="16dp"
             android:background="#E7E6E6"
-            android:padding="2dp"
-            android:textColor="#686464"
             android:drawableTop="@drawable/ic_round_camera_alt_24px"
-            android:text="Upload Photo.."/>
-
-        <TextView
-            android:id="@+id/file"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:padding="2dp"
+            android:text="Upload Photo.."
+            android:textColor="#686464" />
+        <EditText
+            android:id="@+id/editText"
+            android:hint="Masukan Nominal"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
-            android:layout_marginTop="25dp"
-            android:textSize="18sp"/>
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"/>
+
+
     </LinearLayout>
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:id="@+id/imageView" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal">
+
         <Button
+            android:id="@+id/upload"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
