@@ -7,6 +7,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.mppl.smartkosanapp.R;
+import com.mppl.smartkosanapp.SessionManager;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -24,6 +25,7 @@ public class KamarActivity extends AppCompatActivity {
     ImageView tvImg;
     private String skode, sstatus,img ;
     String id;
+    SessionManager sessionManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +33,8 @@ public class KamarActivity extends AppCompatActivity {
         setContentView(R.layout.activity_kamar);
         id = getIntent().getStringExtra("id_kamar");
         ButterKnife.bind(this);
+
+        sessionManager = new SessionManager(getApplicationContext());
 
 
         kode =  findViewById(R.id.kodenya);

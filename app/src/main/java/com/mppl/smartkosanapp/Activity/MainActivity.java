@@ -10,6 +10,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 
 import com.firebase.ui.auth.AuthUI;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -21,15 +22,23 @@ import com.mppl.smartkosanapp.Fragment.KamarFragment;
 import com.mppl.smartkosanapp.Fragment.ProfileFragment;
 import com.mppl.smartkosanapp.Fragment.TagihanFragment;
 import com.mppl.smartkosanapp.R;
+import com.mppl.smartkosanapp.SessionManager;
+
+import butterknife.OnClick;
 
 public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
+
+    SessionManager sessionManager;
+    Button btnLogout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        sessionManager = new SessionManager(MainActivity.this);
 
+        btnLogout = findViewById(R.id.Logout);
 
         loadFragment(new HomeFragment());
         BottomNavigationView bottomNavigationView = findViewById(R.id.bn_main);
@@ -78,20 +87,30 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         return false;
     }
 
-    public void onClick(View v) {
-        FirebaseAuth.getInstance().signOut();
-        if (v.getId() == R.id.Logout) {
-            AuthUI.getInstance()
-                    .signOut(this)
-                    .addOnCompleteListener(new OnCompleteListener<Void>() {
-                        public void onComplete(@NonNull Task<Void> task) {
-                            // user is now signed out
-                            startActivity(new Intent(MainActivity.this, LoginActivity.class));
-                            finish();
-                        }
-                    });
-        }
-    }
+
+
+//
+//    @OnClick(R.id.Logout)
+//    public void btnLogout(){
+//        sessionManager = new SessionManager(MainActivity.this);
+//        sessionManager.logout();
+//        finish();
+//    }
+
+//    public void onClick(View v) {
+//        FirebaseAuth.getInstance().signOut();
+//        if (v.getId() == R.id.Logout) {
+//            AuthUI.getInstance()
+//                    .signOut(this)
+//                    .addOnCompleteListener(new OnCompleteListener<Void>() {
+//                        public void onComplete(@NonNull Task<Void> task) {
+//                            // user is now signed out
+//                            startActivity(new Intent(MainActivity.this, LoginActivity.class));
+//                            finish();
+//                        }
+//                    });
+//        }
+//    }
 
     public void card(View view) {
         if (view.getId()==R.id.kamar){

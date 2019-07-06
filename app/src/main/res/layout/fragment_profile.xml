@@ -53,7 +53,8 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                <de.hdodenhof.circleimageview.CircleImageView
+                    xmlns:app="http://schemas.android.com/apk/res-auto"
                     android:id="@+id/profile_image"
                     android:layout_width="96dp"
                     android:layout_height="96dp"
@@ -65,12 +66,12 @@
 
 
             <LinearLayout
-                android:layout_width="347dp"
+                android:layout_width="392dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/imageLinear"
-                android:layout_marginLeft="30dp"
+                android:layout_marginLeft="16dp"
                 android:layout_marginTop="20dp"
-                android:layout_marginRight="30dp"
+                android:layout_marginRight="16dp"
                 android:orientation="vertical">
 
                 <LinearLayout
@@ -157,24 +158,32 @@
                             android:textSize="20dp" />
                     </LinearLayout>
                 </LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:orientation="vertical">
 
-                    <Button
-                        android:id="@+id/Logout"
-                        android:onClick="onClick"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textAllCaps="false"
-                        android:textStyle="bold"
-                        android:text="Logout"
-                        tools:ignore="OnClick" />
-
-                </LinearLayout>
 
             </LinearLayout>
         </RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="30dp"
+        android:orientation="vertical">
+
+        <Button
+            android:background="@drawable/btn_signup"
+            android:id="@+id/Logout"
+            android:onClick="onClick"
+            android:layout_gravity="bottom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAllCaps="false"
+            android:textStyle="bold"
+            android:textColor="#fff"
+            android:text="Logout"
+            tools:ignore="OnClick" />
+
+    </LinearLayout>
 </LinearLayout>

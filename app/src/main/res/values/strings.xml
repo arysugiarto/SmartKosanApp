@@ -18,7 +18,7 @@
     <string name="kamar">Kamar</string>
 
     <string-array name="jk">
-    <item>Laki-laki</item>
-    <item>perempuan</item>
+        <item>Laki-laki</item>
+        <item>perempuan</item>
     </string-array>
 </resources>

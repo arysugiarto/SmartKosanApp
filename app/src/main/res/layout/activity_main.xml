@@ -15,14 +15,9 @@
         android:layout_above="@+id/bn_main"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
         tools:ignore="NotSibling" />
-
-
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-
-
-
         <android.support.design.widget.BottomNavigationView
             android:id="@+id/bn_main"
             android:layout_width="match_parent"

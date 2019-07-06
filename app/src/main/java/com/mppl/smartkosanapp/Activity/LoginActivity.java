@@ -40,7 +40,7 @@ public class LoginActivity extends AppCompatActivity   {
         btnSigIn = findViewById(R.id.buttonsignin);
         sessionManager = new SessionManager(getApplicationContext());
 
-
+        sessionManager = new SessionManager(getApplicationContext());
 
 
         editTextPassword.setOnEditorActionListener(new TextView.OnEditorActionListener() {
@@ -77,6 +77,8 @@ public class LoginActivity extends AppCompatActivity   {
                 Log.e("Respone",nama);
 
                 if (nama.equals("sukses")){
+
+                    sessionManager.createSession(nama);
                     Intent intent = new Intent(LoginActivity.this,MainActivity.class);
                     startActivity(intent);
                 }

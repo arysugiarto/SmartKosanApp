@@ -19,12 +19,16 @@
             android:background="#80000000">
 
         </LinearLayout>
-        <ImageView
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:background="@drawable/ic_homeorange"
-            android:layout_gravity="center|top"
-            android:layout_marginTop="60dp"/>
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/profile_image"
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            android:layout_gravity="center"
+            android:src="@drawable/rename2"
+            app:civ_border_color="#cccccc"
+            app:civ_border_width="1dp" />
     </FrameLayout>
     <EditText
         android:id="@+id/email"
@@ -81,7 +85,7 @@
         android:onClick="regis"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Don't have an account?"
+        android:text="Belum punya akun?"
         android:textSize="16dp"
         android:layout_gravity="center" />
 

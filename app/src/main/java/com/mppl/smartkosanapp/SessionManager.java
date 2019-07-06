@@ -25,8 +25,8 @@ public class SessionManager {
     private static final String PREF_NAME = "SessionPref";
     private static final String IS_LOGIN = "is_login";
     public static final String USERNAME = "username";
-    public static final String ID_PENGADUAN = "id_pengaduan";
-    public static final String ID_PMI = "id_pmi";
+    public static final String NAMA = "nama";
+    public static final String ID_KAMAR = "id_pengaduan";
 
 
     public static final String LOGIN_TYPE = "login_type";
@@ -37,31 +37,31 @@ public class SessionManager {
         editor = pref.edit();
     }
 
-    public void createSession(String username, String role){
-        editor.putBoolean(IS_LOGIN,true);
-        editor.putString(USERNAME,username);
-        editor.putString(LOGIN_TYPE,role);
-//        editor.putString(ID_PENGADUAN,id_pengaduan);
-
-        editor.commit();
-    }
+//    public void createSession(String username, String role){
+//        editor.putBoolean(IS_LOGIN,true);
+//        editor.putString(USERNAME,username);
+////        editor.putString(LOGIN_TYPE,role);
+////        editor.putString(ID_PENGADUAN,id_pengaduan);
+//
+//        editor.commit();
+//    }
     public void createPengaduan(String id_pengaduan){
-        editor.putString(ID_PENGADUAN,id_pengaduan);
+        editor.putString(ID_KAMAR,id_pengaduan);
         editor.commit();
     }
-    public void createIdPMI(String id_pmi){
-        editor.putString(ID_PMI,id_pmi);
-        editor.commit();
-    }
+//    public void createIdPMI(String id_pmi){
+//        editor.putString(ID_PMI,id_pmi);
+//        editor.commit();
+//    }
 
     public void checkLogin(){
         if(!this.is_login()){
-            Intent i = new Intent(_context,LoginActivity.class);
+            Intent i = new Intent(_context,MainActivity.class);
             i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             _context.startActivity(i);
         }else{
-            Intent i = new Intent(_context, MainActivity.class);
+            Intent i = new Intent(_context, LoginActivity.class);
             i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             _context.startActivity(i);
@@ -86,8 +86,8 @@ public class SessionManager {
         user.put(USERNAME, pref.getString(USERNAME, null));
 //        this.getUser();
         user.put(LOGIN_TYPE,pref.getString(LOGIN_TYPE,null));
-        user.put(ID_PENGADUAN,pref.getString(ID_PENGADUAN,null));
-        user.put(ID_PMI,pref.getString(ID_PMI,null));
+        user.put(ID_KAMAR,pref.getString(ID_KAMAR,null));
+//        user.put(ID_PMI,pref.getString(ID_PMI,null));
 
 
 //        mUserList.get(0).getRole()
@@ -95,9 +95,9 @@ public class SessionManager {
 
     }
 
-    public void createSession(String username) {
+    public void createSession(String nama) {
         editor.putBoolean(IS_LOGIN,true);
-        editor.putString(USERNAME,username);
+        editor.putString(NAMA,nama);
 
         editor.commit();
     }

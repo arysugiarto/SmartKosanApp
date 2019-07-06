@@ -4,7 +4,7 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="#fafafb"
     android:orientation="vertical"
     tools:context=".Fragment.HomeFragment">
 
@@ -89,7 +89,7 @@
 
                 <LinearLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="120dp"
                     android:layout_marginLeft="16dp"
                     android:layout_marginRight="16dp"
                     android:layout_weight="1"
@@ -104,7 +104,8 @@
                         android:layout_height="100dp"
                         android:layout_marginLeft="5dp"
                         android:layout_marginRight="5dp"
-                        android:backgroundTint="#fafafb"
+                        android:backgroundTint="@color/white"
+                        android:elevation="30dp"
                         android:foreground="?android:attr/selectableItemBackground"
                         android:clickable="true"
                         android:focusable="true"
@@ -137,7 +138,7 @@
                         android:layout_height="100dp"
                         android:layout_marginLeft="5dp"
                         android:layout_marginRight="5dp"
-                        android:backgroundTint="#fafafb"
+                        android:backgroundTint="@color/white"
                         android:foreground="?android:attr/selectableItemBackground"
                         android:clickable="true"
                         android:focusable="true"
@@ -168,7 +169,7 @@
                         android:layout_height="100dp"
                         android:layout_marginLeft="5dp"
                         android:layout_marginRight="5dp"
-                        android:backgroundTint="#fafafb"
+                        android:backgroundTint="@color/white"
                         android:foreground="?android:attr/selectableItemBackground"
                         android:clickable="true"
                         android:focusable="true"
@@ -203,13 +204,12 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
                 android:orientation="horizontal">
 
                 <LinearLayout
                     android:layout_weight="1"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="120dp"
                     android:layout_marginLeft="16dp"
                     android:layout_marginRight="16dp"
                     android:gravity="center"
@@ -220,7 +220,7 @@
                         android:layout_height="100dp"
                         android:layout_marginLeft="5dp"
                         android:layout_marginRight="5dp"
-                        android:backgroundTint="#fafafb"
+                        android:backgroundTint="@color/white"
                         android:foreground="?android:attr/selectableItemBackground"
                         android:clickable="true"
                         android:focusable="true"
@@ -250,7 +250,7 @@
                         android:layout_height="100dp"
                         android:layout_marginLeft="5dp"
                         android:layout_marginRight="5dp"
-                        android:backgroundTint="#fafafb"
+                        android:backgroundTint="@color/white"
                         android:foreground="?android:attr/selectableItemBackground"
                         android:clickable="true"
                         android:focusable="true"
@@ -280,7 +280,7 @@
                         android:layout_height="100dp"
                         android:layout_marginLeft="5dp"
                         android:layout_marginRight="5dp"
-                        android:backgroundTint="#fafafb"
+                        android:backgroundTint="@color/white"
                         android:foreground="?android:attr/selectableItemBackground"
                         android:clickable="true"
                         android:focusable="true"
@@ -336,7 +336,7 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="16dp"
                         android:layout_marginTop="10dp"
@@ -364,52 +364,204 @@
                     android:layout_marginRight="16dp"
                     android:gravity="center"
                     android:orientation="vertical">
-
                     <android.support.v7.widget.CardView
                         android:layout_width="match_parent"
                         android:layout_height="130dp"
                         android:layout_marginLeft="5dp"
                         android:layout_marginTop="20dp"
                         android:layout_marginRight="5dp"
-                        android:foreground="?android:attr/selectableItemBackground"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/ripple"
+                        android:backgroundTint="@color/white"
                         android:clickable="true"
                         android:focusable="true"
-                        android:background="@drawable/ripple"
-                        android:layout_marginBottom="10dp"
-                        android:backgroundTint="#14f7be"
+                        android:foreground="?android:attr/selectableItemBackground"
                         app:cardCornerRadius="5dp">
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="16dp"
-                            android:layout_marginTop="25dp"
-                            android:text="Communication"
-                            android:textColor="@color/white"
-                            android:textSize="12sp" />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="130dp"
+                            android:orientation="horizontal"
+                            android:layout_gravity="center"
+                            android:weightSum="3"
+                            android:gravity="center">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:layout_marginLeft="16dp"
+                                android:layout_weight="1">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Listrik"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/black"
+                                    android:textSize="16sp"
+                                    android:layout_margin="4dp"/>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="12/12/2012"
+                                    android:textStyle="bold"
+                                    android:textSize="12sp"
+                                    android:textColor="@color/black"
+                                    android:layout_margin="4dp"/>
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical"
+                                android:gravity="right"
+                                android:layout_margin="8dp">
+
+                                <TextView
+                                    android:id="@+id/tv_harga"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Rp.200.000"
+                                    android:textSize="14sp"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/colorPrimary"
+                                    android:layout_margin="8dp"/>
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical"
+                                android:gravity="right"
+                                android:layout_margin="8dp">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="16dp"
+                                    android:src="@drawable/ic_keyboard_arrow_right_black_24dp"
+                                    android:layout_marginRight="16dp" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="3dp"/>
+
                     </android.support.v7.widget.CardView>
+
 
                     <android.support.v7.widget.CardView
                         android:layout_width="match_parent"
                         android:layout_height="130dp"
                         android:layout_marginLeft="5dp"
                         android:layout_marginRight="5dp"
-                        android:layout_marginBottom="20dp"
-                        android:foreground="?android:attr/selectableItemBackground"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/ripple"
+                        android:backgroundTint="@color/white"
                         android:clickable="true"
                         android:focusable="true"
-                        android:background="@drawable/ripple"
-                        android:backgroundTint="@color/blue"
+                        android:foreground="?android:attr/selectableItemBackground"
                         app:cardCornerRadius="5dp">
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="16dp"
-                            android:layout_marginTop="25dp"
-                            android:text="Communication"
-                            android:textColor="@color/white"
-                            android:textSize="12sp" />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="130dp"
+                            android:orientation="horizontal"
+                            android:layout_gravity="center"
+                            android:weightSum="3"
+                            android:gravity="center">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:layout_marginLeft="16dp"
+                                android:layout_weight="1">
+
+                                <TextView
+                                    android:id="@+id/tv_jenis_tagihan"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Wifi"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/black"
+                                    android:textSize="16sp"
+                                    android:layout_margin="4dp"/>
+
+                                <TextView
+                                    android:id="@+id/tv_date_tagihan"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="12/12/2012"
+                                    android:textStyle="bold"
+                                    android:textSize="12sp"
+                                    android:textColor="@color/black"
+                                    android:layout_margin="4dp"/>
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+
+                                </LinearLayout>
+
+
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical"
+                                android:gravity="right"
+                                android:layout_margin="8dp">
+
+                                <TextView
+
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Rp.50.000"
+                                    android:textSize="14sp"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/colorPrimary"
+                                    android:layout_margin="8dp"/>
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical"
+                                android:gravity="right"
+                                android:layout_margin="8dp">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="16dp"
+                                    android:src="@drawable/ic_keyboard_arrow_right_black_24dp"
+                                    android:layout_marginRight="16dp" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="3dp"/>
+
                     </android.support.v7.widget.CardView>
                 </LinearLayout>
             </LinearLayout>

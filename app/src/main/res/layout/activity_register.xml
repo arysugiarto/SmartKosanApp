@@ -21,7 +21,7 @@
             android:id="@+id/toolbar_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Edit Profile"
+            android:text="Registrasi"
             android:textColor="@color/white"
             style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
             android:layout_gravity="center" />
@@ -34,7 +34,7 @@
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
         android:layout_marginTop="10dp"
-        android:hint="Id"/>
+        android:hint="No KTP"/>
     <EditText
         android:id="@+id/edt_nama"
         android:layout_width="match_parent"
@@ -42,7 +42,7 @@
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
         android:layout_marginTop="10dp"
-        android:hint="nama"/>
+        android:hint="Nama"/>
     <EditText
         android:id="@+id/edt_password"
         android:layout_width="match_parent"
@@ -50,7 +50,7 @@
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
         android:layout_marginTop="10dp"
-        android:hint="password"/>
+        android:hint="Password"/>
     <EditText
         android:id="@+id/edt_email"
         android:layout_width="match_parent"
@@ -58,7 +58,7 @@
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
         android:layout_marginTop="10dp"
-        android:hint="email"/>
+        android:hint="Email"/>
     <EditText
         android:id="@+id/edt_no"
         android:layout_width="match_parent"
@@ -66,7 +66,7 @@
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
         android:layout_marginTop="10dp"
-        android:hint="no hp"/>
+        android:hint="No hp"/>
     <!--<RadioGroup-->
         <!--android:id="@+id/radioGender"-->
         <!--android:layout_width="match_parent"-->
@@ -87,14 +87,14 @@
             <!--android:textColor="#AF9A9A"-->
             <!--android:text="Male"/>-->
     <!--</RadioGroup>-->
-    <Spinner
-        android:id="@+id/spinner"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp">
+    <!--<Spinner-->
+        <!--android:id="@+id/spinner"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginLeft="16dp"-->
+        <!--android:layout_marginRight="16dp">-->
 
-    </Spinner>
+    <!--</Spinner>-->
     <EditText
         android:id="@+id/edt_jk"
         android:layout_width="match_parent"
@@ -102,7 +102,7 @@
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
         android:layout_marginTop="10dp"
-        android:hint="jk"/>
+        android:hint="Jk"/>
 
     <EditText
         android:id="@+id/edt_alamat"
@@ -111,10 +111,12 @@
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
         android:layout_marginTop="10dp"
-        android:hint="alamat"/>
+        android:hint="Alamat"/>
     <Button
         android:id="@+id/buttonSigUp"
+        android:background="@drawable/btn_signup"
         android:layout_width="match_parent"
+        android:textColor="#fff"
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
