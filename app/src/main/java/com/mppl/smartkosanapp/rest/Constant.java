@@ -7,7 +7,7 @@ public class Constant {
 
     public static String BASE_URL ="http://kosan.haptic.id/api/";
 
-//    public static String BASE_URL ="http://192.168.1.10/webservice/SmartKosanWebService/api/";
+//    public static String BASE_URL ="http://192.168.137.1/webservice/SmartKosanWebService/api/";
 
     // Mendeklarasikan Interface BaseApiService
 //    public static ApiInterface getAPIService() {

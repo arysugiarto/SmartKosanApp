@@ -97,20 +97,20 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
 //        finish();
 //    }
 
-//    public void onClick(View v) {
-//        FirebaseAuth.getInstance().signOut();
-//        if (v.getId() == R.id.Logout) {
-//            AuthUI.getInstance()
-//                    .signOut(this)
-//                    .addOnCompleteListener(new OnCompleteListener<Void>() {
-//                        public void onComplete(@NonNull Task<Void> task) {
-//                            // user is now signed out
-//                            startActivity(new Intent(MainActivity.this, LoginActivity.class));
-//                            finish();
-//                        }
-//                    });
-//        }
-//    }
+    public void onClick(View v) {
+        FirebaseAuth.getInstance().signOut();
+        if (v.getId() == R.id.Logout) {
+            AuthUI.getInstance()
+                    .signOut(this)
+                    .addOnCompleteListener(new OnCompleteListener<Void>() {
+                        public void onComplete(@NonNull Task<Void> task) {
+                            // user is now signed out
+                            startActivity(new Intent(MainActivity.this, LoginActivity.class));
+                            finish();
+                        }
+                    });
+        }
+    }
 
     public void card(View view) {
         if (view.getId()==R.id.kamar){

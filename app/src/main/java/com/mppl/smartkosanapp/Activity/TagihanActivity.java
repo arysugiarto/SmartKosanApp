@@ -60,7 +60,9 @@ public class TagihanActivity extends AppCompatActivity {
 
     /* 10.0.2.2 adalah IP Address localhost Emulator Android Studio. Ganti IP Address tersebut dengan
     IP Address Laptop jika di RUN di HP/Genymotion. HP/Genymotion dan Laptop harus 1 jaringan! */
-    private String UPLOAD_URL = "http://192.168.1.24/webservice/SmartKosanWebService/upload.php";
+//    private String UPLOAD_URL = "http://192.168.137.1/webservice/SmartKosanWebService/upload.php";
+    private String UPLOAD_URL = "http://kosan.haptic.id/upload.php";
+
 
     private static final String TAG_SUCCESS = "success";
     private static final String TAG_MESSAGE = "message";
@@ -164,8 +166,8 @@ public class TagihanActivity extends AppCompatActivity {
                         loading.dismiss();
 
                         //menampilkan toast
-                        Toast.makeText(TagihanActivity.this, error.getMessage().toString(), Toast.LENGTH_LONG).show();
-                        Log.e(TAG, error.getMessage().toString());
+//                        Toast.makeText(TagihanActivity.this, error.getMessage().toString(), Toast.LENGTH_LONG).show();
+//                        Log.e(TAG, error.getMessage().toString());
                     }
                 }) {
             @Override
