@@ -51,6 +51,8 @@ public interface ApiInterface {
             @Field("password") String password
     );
 
-    Call<User> postsignup();
+
+    @POST("User/signup")
+    Call<User> profile();
 
 }
