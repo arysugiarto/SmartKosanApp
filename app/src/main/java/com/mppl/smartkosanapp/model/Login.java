@@ -7,7 +7,7 @@ public class Login {
     private String response;
 
     //get data tanpa index array
-    @SerializedName("result")
+    @SerializedName("data")
     User DataUser;
 
     public String getResponse() {

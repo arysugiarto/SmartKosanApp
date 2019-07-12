@@ -26,7 +26,6 @@ public class SessionManager {
     private static final String IS_LOGIN = "is_login";
     public static final String USERNAME = "username";
     public static final String NAMA = "nama";
-    public static final String ID_KAMAR = "id_pengaduan";
     public static final String EMAIL = "email";
     public static final String ID_USER = "id_user";
     public static final String ALAMAT = "alamat";
@@ -43,22 +42,7 @@ public class SessionManager {
         editor = pref.edit();
     }
 
-//    public void createSession(String username, String role){
-//        editor.putBoolean(IS_LOGIN,true);
-//        editor.putString(USERNAME,username);
-////        editor.putString(LOGIN_TYPE,role);
-////        editor.putString(ID_PENGADUAN,id_pengaduan);
-//
-//        editor.commit();
-//    }
-    public void createPengaduan(String id_pengaduan){
-        editor.putString(ID_KAMAR,id_pengaduan);
-        editor.commit();
-    }
-//    public void createIdPMI(String id_pmi){
-//        editor.putString(ID_PMI,id_pmi);
-//        editor.commit();
-//    }
+
 
     public void checkLogin(){
         if(!this.is_login()){
@@ -86,6 +70,9 @@ public class SessionManager {
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         _context.startActivity(intent);
     }
+//    public String getUsername(){
+//
+//    }
 
     public HashMap<String, String> getUserDetils(){
         HashMap<String, String> user = new HashMap<String, String>();
@@ -93,16 +80,10 @@ public class SessionManager {
 
 //        this.getUser();
         user.put(LOGIN_TYPE,pref.getString(LOGIN_TYPE,null));
-        user.put(ID_KAMAR,pref.getString(ID_KAMAR,null));
         user.put(ID_USER,pref.getString(ID_USER, null));
         user.put(EMAIL,pref.getString(EMAIL, null));
         user.put(ALAMAT,pref.getString(ALAMAT, null));
         user.put(NO_HP,pref.getString(NO_HP, null));
-
-//        user.put(ID_PMI,pref.getString(ID_PMI,null));
-
-
-//        mUserList.get(0).getRole()
         return user;
 
     }
@@ -115,28 +96,24 @@ public class SessionManager {
     }
 
     public void createEmail(String email){
-        editor.putBoolean(IS_LOGIN,true);
         editor.putString(EMAIL, email);
         editor.commit();
 
     }
 
     public void createAlamat(String alamat){
-        editor.putBoolean(IS_LOGIN,true);
         editor.putString(ALAMAT, alamat);
         editor.commit();
 
     }
 
     public void createNohp(String no_hp){
-        editor.putBoolean(IS_LOGIN,true);
         editor.putString(NO_HP, no_hp);
         editor.commit();
 
     }
 
     public void createUsername(String username){
-        editor.putBoolean(IS_LOGIN,true);
         editor.putString(USERNAME, username);
         editor.commit();
 
