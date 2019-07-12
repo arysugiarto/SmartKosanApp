@@ -27,6 +27,12 @@ public class SessionManager {
     public static final String USERNAME = "username";
     public static final String NAMA = "nama";
     public static final String ID_KAMAR = "id_pengaduan";
+    public static final String EMAIL = "email";
+    public static final String ID_USER = "id_user";
+    public static final String ALAMAT = "alamat";
+    public static final String PASSWORD = "password";
+    public static final String JK = "jk";
+    public static final String NO_HP = "no_hp";
 
 
     public static final String LOGIN_TYPE = "login_type";
@@ -84,9 +90,15 @@ public class SessionManager {
     public HashMap<String, String> getUserDetils(){
         HashMap<String, String> user = new HashMap<String, String>();
         user.put(USERNAME, pref.getString(USERNAME, null));
+
 //        this.getUser();
         user.put(LOGIN_TYPE,pref.getString(LOGIN_TYPE,null));
         user.put(ID_KAMAR,pref.getString(ID_KAMAR,null));
+        user.put(ID_USER,pref.getString(ID_USER, null));
+        user.put(EMAIL,pref.getString(EMAIL, null));
+        user.put(ALAMAT,pref.getString(ALAMAT, null));
+        user.put(NO_HP,pref.getString(NO_HP, null));
+
 //        user.put(ID_PMI,pref.getString(ID_PMI,null));
 
 
@@ -101,4 +113,34 @@ public class SessionManager {
 
         editor.commit();
     }
+
+    public void createEmail(String email){
+        editor.putBoolean(IS_LOGIN,true);
+        editor.putString(EMAIL, email);
+        editor.commit();
+
+    }
+
+    public void createAlamat(String alamat){
+        editor.putBoolean(IS_LOGIN,true);
+        editor.putString(ALAMAT, alamat);
+        editor.commit();
+
+    }
+
+    public void createNohp(String no_hp){
+        editor.putBoolean(IS_LOGIN,true);
+        editor.putString(NO_HP, no_hp);
+        editor.commit();
+
+    }
+
+    public void createUsername(String username){
+        editor.putBoolean(IS_LOGIN,true);
+        editor.putString(USERNAME, username);
+        editor.commit();
+
+    }
+
+
 }

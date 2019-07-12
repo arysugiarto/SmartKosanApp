@@ -53,6 +53,9 @@ public interface ApiInterface {
 
 
     @POST("User/signup")
-    Call<User> profile();
+    Call<User> profile(
+//            @Query("id_user") String id_user
+
+    );
 
 }

@@ -74,11 +74,24 @@ public class LoginActivity extends AppCompatActivity   {
             public void onResponse(Call<Login> call, Response<Login> response) {
 
                 String nama = response.body().getResponse();
+
+                //simpan data ke preference
+
+                String username = response.body().getDataUser().getNama();
+                String email = response.body().getDataUser().getEmail();
+                String alamat = response.body().getDataUser().getAlamat();
+                String nohp = response.body().getDataUser().getNohp();
+
                 Log.e("Respone",nama);
 
                 if (nama.equals("sukses")){
 
                     sessionManager.createSession(nama);
+                    sessionManager.createAlamat(alamat);
+                    sessionManager.createNohp(nohp);
+                    sessionManager.createEmail(email);
+                    sessionManager.createUsername(username);
+
                     Intent intent = new Intent(LoginActivity.this,MainActivity.class);
                     startActivity(intent);
                 }

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <network-security-config>
+
     <domain-config cleartextTrafficPermitted="true">
         <domain includeSubdomains="true">kosan.haptic.id</domain>
     </domain-config>
