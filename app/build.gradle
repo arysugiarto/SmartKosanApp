@@ -6,7 +6,8 @@ android {
         applicationId "com.mppl.smartkosanapp"
         minSdkVersion 16
         targetSdkVersion 28
-        versionCode 1
+        //noinspection AccidentalOctal
+        versionCode 07122
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
